@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大赢家 · 选择版本</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500;700;900&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Sans SC',system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;padding:30px;color:#e8eefc;
+  background:radial-gradient(120% 90% at 50% -10%,#15233f,#0b1120 50%,#06080f);}
+.logo{font-size:72px;font-weight:900;letter-spacing:16px;text-align:center;
+  background:linear-gradient(180deg,#fff7d8,#f0c040 55%,#b8861a);-webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 6px 30px rgba(240,192,64,.4))}
+.sub{color:#8398bf;letter-spacing:3px;margin:14px 0 40px;text-align:center}
+.cards{display:flex;gap:26px;flex-wrap:wrap;justify-content:center}
+.vcard{width:320px;border-radius:20px;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;
+  background:linear-gradient(165deg,#1c2a44,#161f33);border:1.5px solid #243551;
+  transition:transform .2s cubic-bezier(.2,.8,.3,1),box-shadow .2s,border-color .2s}
+.vcard:hover{transform:translateY(-10px);border-color:#f0c040;box-shadow:0 22px 50px rgba(0,0,0,.5),0 0 30px rgba(240,192,64,.25)}
+.vc-banner{height:130px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;overflow:hidden}
+.vc-banner.dice{background:linear-gradient(135deg,#21407e,#0e1c40)}
+.vc-banner.card{background:linear-gradient(135deg,#15233f,#0a8f5a33)}
+.vc-body{padding:22px 22px 26px}
+.vc-tag{display:inline-block;font-size:11px;letter-spacing:2px;padding:3px 10px;border-radius:999px;
+  background:rgba(240,192,64,.15);color:#fff3c0;margin-bottom:10px}
+.vc-name{font-size:26px;font-weight:900;color:#fff3c0;margin-bottom:10px}
+.vc-desc{font-size:13px;line-height:1.8;color:#8398bf}
+.vc-feat{margin-top:12px;font-size:12px;color:#5a6f96;line-height:1.7}
+.foot{margin-top:36px;color:#5a6f96;font-size:12px;text-align:center;line-height:1.8}
+@media(max-width:560px){.logo{font-size:48px;letter-spacing:8px}}
+</style>
+</head>
+<body>
+  <div class="logo">大 赢 家</div>
+  <div class="sub">BIG WINNER · 两种玩法,挑一个开始</div>
+  <div class="cards">
+    <a class="vcard" href="cardgame/index.html">
+      <div class="vc-banner card">🎴💰</div>
+      <div class="vc-body">
+        <span class="vc-tag">新 · 推荐先玩</span>
+        <div class="vc-name">财富牌局</div>
+        <div class="vc-desc">散户「韭菜」觉醒,讨伐镰刀财阀联盟九大资本家!出牌凑组合、用锦囊、招贵人,本金×杠杆滚雪球。有剧情、有反派、有取舍。</div>
+        <div class="vc-feat">⚔️ 9 大反派 boss 剧情 · 🎴 贵人+锦囊双构筑 · 🎬 通关后分叉第二阶段(横版闯关/塔防)</div>
+      </div>
+    </a>
+    <a class="vcard" href="game_v2/index.html">
+      <div class="vc-banner dice">🎲🏙️</div>
+      <div class="vc-body">
+        <span class="vc-tag">经典 · 沙盘模拟</span>
+        <div class="vc-name">财富流沙盘</div>
+        <div class="vc-desc">掷骰走三环人生棋盘,买资产、凑协同、抢梦想,在 60 岁前进入顺流层。含 AI 对手、遗物、组合,一局 15–30 分钟。</div>
+        <div class="vc-feat">🎯 四角色四流派 · 🤝 资产协同组合 · 🎁 遗物 + 声望系统</div>
+      </div>
+    </a>
+  </div>
+  <div class="foot">两个版本相互独立,数据各自保存。<br>卡牌版现已支持<b style="color:#f0c040">多阶段</b>:第一阶段牌局通关后,「拾镰/折镰」抉择会进入完全不同的第二阶段玩法——<br>折镰→横版闯关《断镰之路》,拾镰→塔防《新的镰刀》。第三阶段(殊途同归的终局)制作中。</div>
+
+  <div id="dev-panel">
+    <div class="dev-title">🛠 开发者直达(跳过前序阶段,直接测试)</div>
+    <div class="dev-links">
+      <a href="cardgame/index.html">① 卡牌·财富牌局</a>
+      <a href="stage2/index.html">② 折镰·横版闯关</a>
+      <a href="stage2-td/index.html">② 拾镰·塔防</a>
+      <a href="stage2-cardtd/index.html">★ 镰刀牌局·卡牌塔防</a>
+    </div>
+  </div>
+</body>
+</html>
+<style>
+#dev-panel{margin-top:26px;padding:14px 22px;border:1px dashed #34507a;border-radius:12px;
+  background:rgba(16,28,61,.4);text-align:center;max-width:680px}
+.dev-title{font-size:12px;color:#8398bf;letter-spacing:1px;margin-bottom:10px}
+.dev-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.dev-links a{font-size:13px;padding:7px 16px;border-radius:8px;text-decoration:none;
+  color:#cfe0ff;background:rgba(52,80,122,.3);border:1px solid #34507a;transition:all .15s}
+.dev-links a:hover{background:rgba(240,192,64,.18);border-color:#f0c040;color:#fff3c0}
+</style>
