@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蜘蛛爬虫</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header id="bar">
+    <div class="logo">🕷 蜘蛛爬虫</div>
+    <form id="form" autocomplete="off">
+      <input id="url" type="text" placeholder="输入要抓取的网址，例如 https://example.com" required>
+      <div class="ctrls">
+      <label title="最多抓取多少个页面（第一页之后会沿着页面里的链接继续爬）">页数
+        <select id="pages">
+          <option value="1">1</option><option value="3" selected>3</option><option value="5">5</option>
+          <option value="10">10</option><option value="20">20</option>
+        </select>
+      </label>
+      <label title="只跟随网址里包含这段文字的链接，留空则不限">链接含
+        <input id="filter" type="text" placeholder="可留空">
+      </label>
+      <label title="蜘蛛爬行速度">速度
+        <select id="speed">
+          <option value="0.7">慢</option><option value="1" selected>中</option><option value="1.8">快</option><option value="3">极快</option>
+        </select>
+      </label>
+      <button id="go" type="submit">放出蜘蛛</button>
+      <button id="stop" type="button" disabled>停止</button>
+      <button id="skip" type="button" disabled title="立刻收完所有数据，不等蜘蛛爬完">跳过动画</button>
+      </div>
+    </form>
+  </header>
+
+  <main id="content"></main>
+
+  <aside id="panel">
+    <div class="p-status"><span id="dot"></span><span id="status">待命：输入网址后放出蜘蛛</span></div>
+    <div class="p-progress"><div id="prog"></div></div>
+    <div class="stats" id="stats"></div>
+    <div class="p-actions">
+      <button id="exJson" disabled>导出 JSON</button>
+      <button id="exCsv" disabled>导出 CSV</button>
+      <button id="copy" disabled>复制文本</button>
+    </div>
+    <div class="feed-title">实时收割 <span id="feedNote"></span></div>
+    <ol id="feed"></ol>
+  </aside>
+
+  <div id="fx"></div>
+  <canvas id="legs"></canvas>
+  <div id="toast"></div>
+
+  <script src="spider.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
